@@ -5,7 +5,7 @@ http://localhost:8000/aws/objectsList
 
 ## Descargar Objeto
 http://localhost:8000/aws/downloadObject?fileName= {{Nombre del archivo con su extension}}
-ejemplo: http://localhost:8000/aws/downloadObject?fileName=testfile.txt
+http://localhost:8000/aws/downloadObject?fileName=testfile.txt
 
 ## Subir objeto
 http://localhost:8000/aws/uploadObject
@@ -22,3 +22,9 @@ http://localhost:8000/aws/deleteObject
 {
 "fileName": "tessdsdt3.txt"
 }
+
+## Leer archivo csv desde S3
+
+http://localhost:8000/aws/readCsvObject?fileName={{Nombre del archivo con su extension}}
+
+http://localhost:8000/aws/readCsvObject?fileName=acramentorealestatetransactions.csv
