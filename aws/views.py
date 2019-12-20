@@ -16,6 +16,7 @@ from django.http import HttpResponse
 
 
 @api_view(['GET'])
+
 def objectsList(request):
 	s3=boto3.resource('s3',aws_access_key_id="AKIAZ3M27WFM7RONFHXU",aws_secret_access_key="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")
 	bucket = s3.Bucket('backend-dev-test')
@@ -73,12 +74,15 @@ def deleteObject(request):
 		response="Error"
 
 	return  HttpResponse(response)
-
+	
+@api_view(['GET'])
 def readCsvObject(request):
+
+	fileName = request.GET.get('fileName')
 	s3=boto3.client('s3',aws_access_key_id="AKIAZ3M27WFM7RONFHXU",aws_secret_access_key="Q9Xm2basNJYLXHWtT0AaIHBo+tPmZU4YaQDfgxxt")
 	bucket_name = 'backend-dev-test'
-	object_key = 'FL_insurance_sample.csv'
-	csv_obj = s3.get_object(Bucket=bucket_name, Key=object_key)
+	object_key = 'acramentorealestatetransactions.csv'
+	csv_obj = s3.get_object(Bucket=bucket_name, Key=fileName)
 	body = csv_obj['Body']
 	csv_string = body.read().decode('utf-8')
 	df = pd.read_csv(StringIO(csv_string))
