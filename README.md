@@ -1,4 +1,6 @@
-# pruebaDesarrollador
+# Instalacion
+
+Intalar librerias del archivo requeriment.txt (pip install -r requirements.txt). Correr servidor de Django.
 
 ## Lista de objetos
 http://localhost:8000/aws/objectsList
