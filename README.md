@@ -7,10 +7,14 @@ http://localhost:8000/aws/objectsList
 
 ## Descargar Objeto
 http://localhost:8000/aws/downloadObject?fileName= {{Nombre del archivo con su extension}}
+
 http://localhost:8000/aws/downloadObject?fileName=testfile.txt
+
+El archivo queda guardado en la carpeta del proyecto
 
 ## Subir objeto
 http://localhost:8000/aws/uploadObject
+
 Nota: la direccion del archivo debe contener forward slashes
 
 {
