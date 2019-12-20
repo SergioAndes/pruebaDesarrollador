@@ -16,7 +16,6 @@ from django.http import HttpResponse
 
 
 @api_view(['GET'])
-
 def objectsList(request):
 	s3=boto3.resource('s3',aws_access_key_id="AKIAZ3M27WFM7RONFHXU",aws_secret_access_key="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")
 	bucket = s3.Bucket('backend-dev-test')
